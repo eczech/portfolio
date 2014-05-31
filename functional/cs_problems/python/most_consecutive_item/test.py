@@ -1,14 +1,14 @@
 '''
 Created on May 29, 2014
 
-Unit tests for 'solutionA' module, defining methods for determining
+Unit tests for 'most_consecutive_item' library, defining methods for determining
 the most consecutively occurring element in a list
 
 @author: Eric Czech
 '''
 import unittest
 
-import solutionA
+import lib
 
 class Test(unittest.TestCase):
 
@@ -16,8 +16,8 @@ class Test(unittest.TestCase):
     def validate(self, arr, expected):
         
         # Get results for both solutions
-        ideal_res = solutionA.findMostConsecutivelyRepeatingValue_ideal(arr)
-        practical_res = solutionA.findMostConsecutivelyRepeatingValue_practical(arr)
+        ideal_res = findMostConsecutivelyRepeatingValue_ideal(arr)
+        practical_res = findMostConsecutivelyRepeatingValue_practical(arr)
         
         # Verify that the results from both methods are the list of expected results
         self.assertIn(ideal_res, expected)
