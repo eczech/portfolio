@@ -24,7 +24,7 @@ class Test(unittest.TestCase):
         self.assertIn(practical_res, expected)
         
         # Print the results of the case validation
-        print  'Most consecutive item test case: Input = {}, Result = {} ({} consecutive appearances)'\
+        print  'Most consecutive item test case: input = {}, result = {} ({} consecutive appearances)'\
             .format(
                     arr, 
                     ideal_res[0] if ideal_res else None, 
