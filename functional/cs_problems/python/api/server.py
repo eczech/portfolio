@@ -32,4 +32,4 @@ def most_frequent_item(arr):
         .format(arr_ints, res[0] if res else 'None', res[1] if res else 'None')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True, use_debugger=True, use_reloader=True )
+    app.run(host='0.0.0.0', debug=True, use_debugger=True, use_reloader=True, port = 8000 )
