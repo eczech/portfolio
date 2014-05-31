@@ -8,7 +8,7 @@ the most consecutively occurring element in a list
 '''
 import unittest
 
-import lib
+from lib import *
 
 class Test(unittest.TestCase):
 
