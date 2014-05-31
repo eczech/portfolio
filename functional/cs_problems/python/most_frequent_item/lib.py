@@ -63,7 +63,7 @@ def findMostFrequentValue_ideal(arr, c=.5):
     if not arr:
         return None
     
-    # Limit c to the restrict range described above
+    # Limit c to the restricted range described above
     c = min(max(0, c), .5)
     
     # Since we're going through the trouble of implementing a solution to
