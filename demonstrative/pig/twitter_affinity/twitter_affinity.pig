@@ -10,9 +10,10 @@
 -- is between the two.  Or at the very least, a higher score indicates that the same
 -- people like to talk about both, regardless of what the relationship between
 -- them actually is.
-
+--
 -- Example invocations:
 -- pig -f twitter_affinity.pig -param_file twitter_affinity.params -param INPUT_DIR=tweet_data OUTPUT_DIR=affinity_data
+
 
 -- Set some primary job configuration options
 SET job.name 'Twitter Affinity'
