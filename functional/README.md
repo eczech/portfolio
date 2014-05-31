@@ -13,6 +13,7 @@ Problems and Solutions:
 
 
 - *Find the integer that appears most frequently in an iterable collection of integers*
+    *<br>Example: f( [1, 2, 2, 5, 5, 5, 2, 2] ) = 2 (4 appearances)* 
 
     [Python Solution](/functional/cs_problems/python/most_frequent_item) with time complexity **O( n^( 1+c ) )** and space complextiy **O( n^( 1-c ) + n^c )** where *c* is some configurable parameter on the range [0, .5].  See the documentation in the code for more details on how this implementation can be tuned appropriately based on the expected size of the given integer collection.
 
