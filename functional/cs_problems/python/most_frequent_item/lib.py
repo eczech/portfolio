@@ -8,7 +8,7 @@ appears most frequently. Ex: [1, 2, 2, 5, 5, 5, 2, 2] => 2"
 
 There are two solutions contained, one "practical" solution (i.e. one that
 you'd likely use in the real world) and one "ideal" solution (i.e. one 
-more complicated solution with a lower asymptotic space complexity).
+more complicated solution with configurable asymptotic space complexity).
 
 @author: Eric Czech
 '''
@@ -38,19 +38,20 @@ def findMostFrequentValue_ideal(arr, c=.5):
     complexity of this routine where the computational complexity = O( n^( 1+c ) ), 
     and the storage complexity = O( n^( 1-c ) + n^c ).
     
-    * This storage complexity comes from the fact that the size of each bucket, processed
-    one at a time, is O( n^( 1-c ) ).  In addition to that, a most frequently occurring item
-    from each bucket must be retained, incurring O(n^c) more space usage (i.e. the number of buckets).
-    
     Here are the characteristics of some common settings for 'c' (must be between 0 and .5):
     A) 0    --> High speed - O(n), High storage overhead - O(n):
             equivalent to computing a single histogram (i.e. the naive approach)
     B) .25  --> Medium speed - O(n^1.25), Medium storage overhead - O(n^.75 + n^.25)
     B) .5   --> Low speed - O(n^1.5), Low storage overhead - O(n^.5)
     
-    * The lowest possible storage overhead is O(n^.5); setting c higher than .5 actually 
-    starts to increase the space needed (as such, c will automatically be set within
-    the bounds of 0 to .5 if it is outside of them)
+    * The lowest possible storage overhead is O(sqrt(n)); increasing the value of 'c'
+    when c is between 0 and .5 lowers the space required, but increasing 'c' beyond .5
+    actually starts to increase the required space (i.e. O( n^( 1-c ) + n^c ) is minimized 
+    when c = .5) while ALSO increasing the time complexity.  In other words, the space and
+    time complexities are inversely correlated for values of 'c' between 0 and .5, but positively
+    correlated when 'c' > .5 (so setting 'c' greater than .5 doesn't help performance in any way).
+    As such, 'c' will automatically be set within the closest endpoint on the range [0, .5] if 
+    it is specified outside of that range.
     
     Args:
         arr: list of elements to search
