@@ -1,10 +1,9 @@
 '''
 Created on May 29, 2014
 
-Solution functions to the two following problems:
+Solution functions for the following problem:
 
-"B) int findMostFrequentValue (int[] arr)
-A function where the input is an array of integers and the output is the value that 
+"Write a function where the input is an array of integers and the output is the value that 
 appears most frequently. Ex: [1, 2, 2, 5, 5, 5, 2, 2] => 2"
 
 There are two solutions contained, one "practical" solution (i.e. one that
