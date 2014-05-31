@@ -1,14 +1,14 @@
 '''
 Created on May 29, 2014
 
-Unit tests for 'solutionB' module, defining methods for determining
+Unit tests for 'most_frequent_item' library, defining methods for determining
 the most frequently occurring element in a list
 
 @author: Eric Czech
 '''
 import unittest
 
-import solutionB
+from lib import *
 
 class Test(unittest.TestCase):
 
@@ -16,22 +16,22 @@ class Test(unittest.TestCase):
     def validate(self, arr, expected):
         
         # Get results for both solutions
-        ideal_res = solutionB.findMostFrequentValue_ideal(arr)
-        practical_res = solutionB.findMostFrequentValue_practical(arr)
+        ideal_res = findMostFrequentValue_ideal(arr)
+        practical_res = findMostFrequentValue_practical(arr)
         
         # Verify that the results from both methods are the list of expected results
         self.assertIn(ideal_res, expected)
         self.assertIn(practical_res, expected)
         
         # Print the results of the case validation
-        print  'Problem 1 - Solution B: Input = {}, Result = {} ({} appearances)'\
+        print  'Most frequent item test case: input = {}, result = {} ({} appearances)'\
             .format(
                     arr, 
                     ideal_res[0] if ideal_res else None, 
                     ideal_res[1] if ideal_res else None
             )
     
-    def test_solution_B(self):
+    def test_most_frequent_item(self):
         # Edge cases for empty inputs
         self.validate(None, [None])
         self.validate([], [None])
@@ -50,5 +50,4 @@ class Test(unittest.TestCase):
         
 
 if __name__ == "__main__":
-    #import sys;sys.argv = ['', 'Test.testName']
     unittest.main()
