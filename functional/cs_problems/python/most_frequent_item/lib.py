@@ -8,7 +8,7 @@ appears most frequently. Ex: [1, 2, 2, 5, 5, 5, 2, 2] => 2"
 
 There are two solutions contained, one "practical" solution (i.e. one that
 you'd likely use in the real world) and one "ideal" solution (i.e. one 
-more complicated solution with configurable asymptotic space complexity).
+more complicated solution with a configurable asymptotic space complexity).
 
 @author: Eric Czech
 '''
