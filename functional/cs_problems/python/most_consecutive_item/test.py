@@ -31,7 +31,7 @@ class Test(unittest.TestCase):
                     ideal_res[1] if ideal_res else None
             )
     
-    def test_solution_A(self):
+    def test_most_consecutive_item(self):
         # Edge cases for empty inputs
         self.validate(None, [None])
         self.validate([], [None])
