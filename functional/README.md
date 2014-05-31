@@ -4,8 +4,8 @@ These projects contain executable implementations of solutions for several probl
 
 Problems and Solutions:
 
-- *Find the integer in an iterable collection of integers with the most consecutive appearances.*
-    *Ex: [1, 2, 2, 5, 5, 5, 2, 2] => 5 (3 consecutive appearances)* 
+- *Write a function to find the integer in an iterable collection of integers with the most consecutive appearances.*
+    *Ex: f([1, 2, 2, 5, 5, 5, 2, 2]) = 5 (3 consecutive appearances)* 
 
     [Python Solution](/functional/cs_problems/python/most_consecutive_item) with time complexity **O(n)** and space complexity **O(1)**
 
