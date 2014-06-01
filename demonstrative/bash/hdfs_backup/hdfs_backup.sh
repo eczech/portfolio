@@ -37,6 +37,10 @@ usage () {
 	exit 1
 }
 
+err() {
+  echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@" >&2
+}
+
 while getopts p:r:s:fdh OPT
 do
 	case $OPT in
@@ -71,7 +75,7 @@ A_DIRS[2]="$ARCHIVE_DIR/monthly/`date +'%Y-%m'`"
 if [ ! -d $MASTER_DIR ]; then
 	mkdir -p $MASTER_DIR
 	if [ $? -ne 0 ]; then
-		echo "Failed to create backup directory $MASTER_DIR" 1>&2
+		err "Failed to create backup directory $MASTER_DIR"
 		exit 1
 	fi
 fi
@@ -83,7 +87,7 @@ do
 	if [ ! -d $dir ]; then
 		mkdir -p $dir
 		if [ $? -ne 0 ]; then
-			echo "Failed to create backup directory $BACKUP_DIR" 1>&2
+			err "Failed to create backup directory $BACKUP_DIR"
 			exit 1
 		fi
 	else
@@ -93,7 +97,7 @@ do
 				echo "Removing old links in backup dir $dir"
 				rm $dir/*
 				if [ $? -ne 0 ]; then
-					echo "Failed to remove old links in dir $dir" 1>&2
+					err "Failed to remove old links in dir $dir" 
 					exit 1
 				fi
 			fi
@@ -143,7 +147,7 @@ do
 		if [ -z "$DRY_RUN" ]; then
 			ln $MASTER_DIR/$file $dir/$file
 			if [ $? -ne 0 ]; then
-				echo "Failed to link $MASTER_DIR/$file to $dir/$file (moving on anyways)" 2>&1
+				err "Failed to link $MASTER_DIR/$file to $dir/$file (moving on anyways)" 
 			fi
 		fi
 	done
